@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-const required = ['GOOGLE_CLIENT_ID', 'JWT_SECRET'];
+const required = ['GOOGLE_CLIENT_ID', 'JWT_SECRET','GROQ_API_KEY'];
 const missing = required.filter((k) => !process.env[k]);
 if (missing.length) {
   console.error(`Missing env vars: ${missing.join(', ')}`);
@@ -14,4 +14,5 @@ export const env = {
   googleClientId: process.env.GOOGLE_CLIENT_ID,
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '1h',
+  groqApiKey: process.env.GROQ_API_KEY,
 };
